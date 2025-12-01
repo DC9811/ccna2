@@ -631,33 +631,34 @@ conf t
 !
  voice register global
   mode cme
-  source-address 10._.100.8 port 5060
+  source-address 10.81.100.8 port 5060
   max-dn 12
   max-pool 12
   authenticate register
   create profile sync
  voice register dn 1
-   number ____
+   number 8171
    allow watch
-   name _______
+   name 8171
  voice register dn 2
-   number ___
+   number 8172
    allow watch
-   name _______
+   name 8172
 !
   voice register pool 1
-    id mac ____.____.____
+    id mac 78e6.1c9a.229b
     number 1 dn 1
     dtmf-relay sip-notify
-    username ____ password ____
+    username 8171 password 8171
     codec g711ulaw
 !
   voice register pool 2
-    id mac ____.____.____
+    id mac 76e5.5268.cba5
     number 1 dn 2
     dtmf-relay sip-notify
-    username ____ password ____
+    username 8172 password 8172
     codec g711ulaw
+end
 !
 *******call other countries!!!********
 config t
@@ -671,5 +672,6 @@ exit
           
 sip-ua
 sip-server ipv4:192.168.k.1
+
 
 
